@@ -363,10 +363,15 @@ ul, ol {
 .header-logo {
   display: flex;
   align-items: center;
-  gap: var(--space-3);
+  gap: var(--space-2);
   text-decoration: none;
 }
-.header-logo-img { height: 38px; width: auto; }
+.header-logo-img {
+  height: 38px;
+  width: auto;
+  max-width: 38px;     /* 이미지 파일 안의 여백이 길어도 가로 폭이 늘어나지 않도록 제한 */
+  object-fit: contain; /* 비율 유지하면서 박스 안에 맞춤 */
+}
 .header-logo-name {
   font-size: 1.05rem;
   font-weight: var(--font-bold);

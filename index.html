@@ -51,7 +51,6 @@
     .hero-badge {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
       background: var(--color-navy-light);
       color: var(--color-secondary);
       font-size: 0.78rem;
@@ -60,12 +59,6 @@
       padding: 5px 14px;
       border-radius: var(--radius-full);
       margin-bottom: 1.5rem;
-    }
-    .hero-badge::before {
-      content: '';
-      width: 6px; height: 6px;
-      background: var(--color-secondary);
-      border-radius: 50%;
     }
 
     .hero-title {
@@ -130,6 +123,28 @@
       margin-bottom: 0;
       border-left: 3px solid var(--color-secondary);
       padding-left: 1rem;
+    }
+    .hero-process {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 1.75rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--color-border);
+    }
+    .hero-process-step {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--color-secondary);
+      background: var(--color-navy-light);
+      padding: 6px 12px;
+      border-radius: var(--radius-full);
+      white-space: nowrap;
+    }
+    .hero-process-arrow {
+      font-size: 0.85rem;
+      color: var(--color-text-muted);
+      flex-shrink: 0;
     }
 
     .hero-deco-circle { position: absolute; border-radius: 50%; opacity: 0.15; z-index: 1; }
@@ -390,6 +405,15 @@
               <div class="hero-card-quote">
                 "현장에 적용 가능한 솔루션,<br>
                 지속적인 변화를 만드는 것"
+              </div>
+
+              <!-- TR이 일하는 방식을 짧은 3단계로 보여주는 미니 프로세스 -->
+              <div class="hero-process">
+                <div class="hero-process-step">현장 진단</div>
+                <div class="hero-process-arrow">→</div>
+                <div class="hero-process-step">맞춤 설계</div>
+                <div class="hero-process-arrow">→</div>
+                <div class="hero-process-step">실행</div>
               </div>
             </div>
           </div>

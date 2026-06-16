@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <title>TR경영연구소 | 리더십 코칭·강의 전문</title>
+  <meta name="description"
+        content="TR경영연구소는 리더십 코칭, 워크숍, 강의를 통해 개인과 조직의 진정한 변화를 이끕니다. Transformational · Trendy · True">
+
+  <!-- Google Fonts: Noto Sans KR -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- 공통 스타일 -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- 페이지 전용 스타일 -->
+  <style>
+
+    /* ──────────────────────────────────────────
+       1. 히어로 섹션
+    ────────────────────────────────────────── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      background-color: #F7FAFD;
+      background-image:
+        radial-gradient(ellipse 60% 50% at 90% 20%, rgba(33,155,204,0.12) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 40% at 10% 80%, rgba(70,172,65,0.10) 0%, transparent 60%);
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 4rem;
+      padding: 6rem 0 4rem;
+    }
+
+    .hero-text { animation: fadeUp 0.8s ease both; }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--color-sky-light);
+      color: var(--color-sky-dark);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      padding: 5px 14px;
+      border-radius: var(--radius-full);
+      margin-bottom: 1.5rem;
+    }
+    .hero-badge::before {
+      content: '';
+      width: 6px; height: 6px;
+      background: var(--color-primary);
+      border-radius: 50%;
+    }
+
+    .hero-title {
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      font-weight: 700;
+      color: var(--color-text-primary);
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.25rem;
+    }
+    .hero-title .accent-blue { color: var(--color-primary); }
+
+    .hero-sub {
+      font-size: 1.05rem;
+      color: var(--color-text-secondary);
+      line-height: 1.8;
+      margin-bottom: 2.5rem;
+      max-width: 460px;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 3rem;
+    }
+
+    .hero-stats { display: flex; gap: 2rem; flex-wrap: wrap; }
+    .hero-stat-num {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--color-secondary);
+      line-height: 1;
+    }
+    .hero-stat-num span { font-size: 1rem; color: var(--color-primary); }
+    .hero-stat-label { font-size: 0.8rem; color: var(--color-text-muted); margin-top: 3px; }
+
+    .hero-visual { animation: fadeUp 0.8s 0.2s ease both; position: relative; }
+
+    .hero-card-main {
+      background: #fff;
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--color-border);
+      box-shadow: 0 20px 60px rgba(41,80,160,0.10);
+      padding: 2.5rem;
+      position: relative;
+      z-index: 2;
+    }
+    .hero-card-tag {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    .hero-card-quote {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--color-text-primary);
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+      border-left: 3px solid var(--color-primary);
+      padding-left: 1rem;
+    }
+    .hero-card-profile { display: flex; align-items: center; gap: 12px; }
+    .hero-card-avatar {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem; font-weight: 700; color: #fff;
+      flex-shrink: 0;
+    }
+    .hero-card-name { font-size: 0.9rem; font-weight: 700; color: var(--color-text-primary); }
+    .hero-card-role { font-size: 0.78rem; color: var(--color-text-muted); margin-top: 2px; }
+
+    .hero-float-card {
+      position: absolute;
+      background: #fff;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--color-border);
+      box-shadow: var(--shadow-md);
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--color-text-primary);
+      white-space: nowrap;
+    }
+    .hero-float-card .fc-icon {
+      width: 32px; height: 32px;
+      border-radius: var(--radius-md);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+    .hero-float-1 { top: -1.5rem; right: 1.5rem; animation: float 3s ease-in-out infinite; }
+    .hero-float-2 { bottom: -1rem; left: -1rem; animation: float 3.5s 0.5s ease-in-out infinite; }
+
+    .hero-deco-circle { position: absolute; border-radius: 50%; opacity: 0.15; z-index: 1; }
+    .hero-deco-1 { width: 300px; height: 300px; top: -80px; right: -80px; background: var(--color-primary); }
+    .hero-deco-2 { width: 150px; height: 150px; bottom: 20px; right: 20px; background: var(--color-accent); }
+
+    /* ──────────────────────────────────────────
+       2. 키워드 배너
+    ────────────────────────────────────────── */
+    .keyword-banner { background: var(--color-secondary); padding: 1rem 0; overflow: hidden; }
+    .keyword-track {
+      display: flex; gap: 3rem;
+      animation: marquee 20s linear infinite;
+      width: max-content;
+    }
+    .keyword-item {
+      display: flex; align-items: center; gap: 0.75rem;
+      color: rgba(255,255,255,0.6);
+      font-size: 0.85rem; font-weight: 500; letter-spacing: 0.04em;
+      white-space: nowrap;
+    }
+    .keyword-dot { width: 5px; height: 5px; border-radius: 50%; flex-shrink: 0; }
+    .keyword-dot.blue  { background: var(--color-primary); }
+    .keyword-dot.green { background: var(--color-accent); }
+
+    /* ──────────────────────────────────────────
+       3. 프로그램 미리보기 섹션 (Programs 안내)
+    ────────────────────────────────────────── */
+    .programs-section { padding: var(--section-padding-y) 0; background: #fff; }
+    .programs-header { text-align: center; margin-bottom: 4rem; }
+
+    .program-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    .program-card {
+      background: var(--color-bg-page);
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--color-border);
+      padding: 2.5rem 2rem;
+      transition: transform var(--transition-normal), box-shadow var(--transition-normal), border-color var(--transition-normal);
+      position: relative;
+      overflow: hidden;
+    }
+    .program-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+      opacity: 0;
+      transition: opacity var(--transition-normal);
+    }
+    .program-card.sky::before   { background: var(--color-primary); }
+    .program-card.navy::before  { background: var(--color-secondary); }
+    .program-card.green::before { background: var(--color-accent); }
+    .program-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); border-color: transparent; }
+    .program-card:hover::before { opacity: 1; }
+
+    .program-icon {
+      width: 56px; height: 56px;
+      border-radius: var(--radius-lg);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem;
+      margin-bottom: 1.5rem;
+    }
+    .program-icon.sky   { background: var(--color-sky-light);   color: var(--color-primary); }
+    .program-icon.navy  { background: var(--color-navy-light);  color: var(--color-secondary); }
+    .program-icon.green { background: var(--color-green-light); color: var(--color-accent); }
+
+    .program-name { font-size: 1.2rem; font-weight: 700; color: var(--color-text-primary); margin-bottom: 0.75rem; }
+    .program-desc { font-size: 0.9rem; color: var(--color-text-secondary); line-height: 1.75; margin-bottom: 1.5rem; }
+    .program-link {
+      display: inline-flex; align-items: center; gap: 4px;
+      font-size: 0.85rem; font-weight: 700; color: var(--color-primary);
+    }
+
+    /* ──────────────────────────────────────────
+       4. 철학 섹션 (TR = Transformational·Trendy·True)
+    ────────────────────────────────────────── */
+    .philosophy-section {
+      padding: var(--section-padding-y) 0;
+      background: var(--color-secondary);
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+    .philosophy-section::before {
+      content: 'TR';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 30vw;
+      font-weight: 900;
+      color: rgba(255,255,255,0.03);
+      pointer-events: none;
+      line-height: 1;
+    }
+    .philosophy-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+    .philosophy-label {
+      font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em;
+      color: var(--color-primary); text-transform: uppercase; margin-bottom: 1rem;
+    }
+    .philosophy-title {
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 700; color: #fff; line-height: 1.3; margin-bottom: 1.5rem;
+    }
+    .philosophy-desc { font-size: 1rem; color: rgba(255,255,255,0.7); line-height: 1.9; }
+
+    .philosophy-values { display: flex; flex-direction: column; gap: 1.25rem; }
+    .value-item {
+      display: flex; align-items: flex-start; gap: 1rem;
+      padding: 1.25rem 1.5rem;
+      background: rgba(255,255,255,0.06);
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(255,255,255,0.08);
+      transition: background var(--transition-normal);
+    }
+    .value-item:hover { background: rgba(255,255,255,0.10); }
+    .value-letter {
+      width: 40px; height: 40px;
+      border-radius: var(--radius-md);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem; font-weight: 900;
+      flex-shrink: 0;
+    }
+    .value-word { font-size: 0.95rem; font-weight: 700; color: #fff; margin-bottom: 3px; }
+    .value-desc { font-size: 0.85rem; color: rgba(255,255,255,0.6); line-height: 1.6; }
+
+    /* ──────────────────────────────────────────
+       5. Diagnosis 안내 섹션
+    ────────────────────────────────────────── */
+    .diagnosis-promo {
+      padding: var(--section-padding-y) 0;
+      background: var(--color-bg-subtle);
+    }
+    .diagnosis-card {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 3rem;
+      align-items: center;
+      background: #fff;
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--color-border);
+      box-shadow: var(--shadow-card);
+      padding: 3rem;
+    }
+    .diagnosis-text .section-label { margin-bottom: 0.75rem; }
+    .diagnosis-title {
+      font-size: 1.7rem; font-weight: 700; color: var(--color-text-primary);
+      line-height: 1.35; margin-bottom: 1rem;
+    }
+    .diagnosis-desc { font-size: 0.95rem; color: var(--color-text-secondary); line-height: 1.8; margin-bottom: 1.75rem; }
+
+    .diagnosis-visual {
+      background: var(--color-sky-light);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+    }
+    .diag-check-row {
+      display: flex; align-items: center; gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(33,155,204,0.15);
+      font-size: 0.85rem;
+      color: var(--color-text-primary);
+    }
+    .diag-check-row:last-child { border-bottom: none; }
+    .diag-checkbox {
+      width: 20px; height: 20px;
+      border-radius: 5px;
+      border: 2px solid var(--color-primary);
+      flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.7rem; color: #fff;
+    }
+    .diag-checkbox.checked { background: var(--color-primary); }
+
+    /* ──────────────────────────────────────────
+       6. CTA 섹션
+    ────────────────────────────────────────── */
+    .cta-section { padding: var(--section-padding-y) 0; background: #fff; text-align: center; }
+    .cta-inner { max-width: 640px; margin: 0 auto; }
+    .cta-badge {
+      display: inline-block; background: var(--color-green-light); color: var(--color-green-dark);
+      font-size: 0.78rem; font-weight: 700; letter-spacing: 0.06em;
+      padding: 5px 14px; border-radius: var(--radius-full); margin-bottom: 1.5rem;
+    }
+    .cta-title { font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 700; color: var(--color-text-primary); line-height: 1.3; margin-bottom: 1rem; }
+    .cta-desc { font-size: 1rem; color: var(--color-text-secondary); line-height: 1.8; margin-bottom: 2.5rem; }
+    .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+    /* ──────────────────────────────────────────
+       키프레임 애니메이션
+    ────────────────────────────────────────── */
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes float  { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* ──────────────────────────────────────────
+       반응형
+    ────────────────────────────────────────── */
+    @media (max-width: 768px) {
+      .hero-inner { grid-template-columns: 1fr; text-align: center; padding: 5rem 0 3rem; }
+      .hero-cta, .hero-stats { justify-content: center; }
+      .hero-sub { margin-left: auto; margin-right: auto; }
+      .hero-visual { display: none; }
+
+      .program-cards { grid-template-columns: 1fr; }
+
+      .philosophy-inner { grid-template-columns: 1fr; gap: 3rem; }
+
+      .diagnosis-card { grid-template-columns: 1fr; padding: 2rem; }
+
+      .btn-contact { align-self: flex-start; }
+    }
+
+    @media (max-width: 480px) {
+      .cta-buttons { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ① 헤더 자리 (components.js가 자동 삽입) -->
+  <div id="header-placeholder"></div>
+
+  <main>
+
+    <!-- ════════════════════════════════════
+         1. 히어로 섹션 (Main)
+    ════════════════════════════════════ -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-inner">
+
+          <div class="hero-text">
+            <div class="hero-badge">리더십 &amp; 코칭 전문</div>
+
+            <h1 class="hero-title">
+              변화는<br>
+              <span class="accent-blue">질문</span>에서<br>
+              시작됩니다
+            </h1>
+
+            <p class="hero-sub">
+              TR경영연구소는 리더십 코칭과 워크숍을 통해
+              개인과 조직이 스스로 답을 찾고
+              지속가능한 성장을 이뤄가도록 돕습니다.
+            </p>
+
+            <div class="hero-cta">
+              <a href="contact.html" class="btn btn--primary btn--lg">무료 상담 신청</a>
+              <a href="programs.html" class="btn btn--outline btn--lg">프로그램 보기</a>
+            </div>
+
+            <div class="hero-stats">
+              <div class="hero-stat-item">
+                <div class="hero-stat-num">10<span>년+</span></div>
+                <div class="hero-stat-label">코칭 경력</div>
+              </div>
+              <div class="hero-stat-item">
+                <div class="hero-stat-num">200<span>+</span></div>
+                <div class="hero-stat-label">코칭 고객</div>
+              </div>
+              <div class="hero-stat-item">
+                <div class="hero-stat-num">석사</div>
+                <div class="hero-stat-label">리더십 &amp; 코칭</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-visual">
+            <div class="hero-deco-circle hero-deco-1"></div>
+            <div class="hero-deco-circle hero-deco-2"></div>
+
+            <div class="hero-float-card hero-float-1">
+              <div class="fc-icon" style="background:var(--color-sky-light);color:var(--color-primary);">✦</div>
+              리더십 코칭 진행 중
+            </div>
+
+            <div class="hero-card-main">
+              <div class="hero-card-tag">코칭 철학</div>
+              <div class="hero-card-quote">
+                "답을 주는 것이 아니라,<br>
+                스스로 답을 찾도록 돕는 것"
+              </div>
+              <div class="hero-card-profile">
+                <div class="hero-card-avatar">TR</div>
+                <div>
+                  <div class="hero-card-name">TR경영연구소</div>
+                  <div class="hero-card-role">리더십 코칭 전문 · 석사 학위</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="hero-float-card hero-float-2">
+              <div class="fc-icon" style="background:var(--color-green-light);color:var(--color-accent);">↑</div>
+              조직 변화 지수 상승 중
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ════════════════════════════════════
+         2. 키워드 배너
+    ════════════════════════════════════ -->
+    <div class="keyword-banner" aria-hidden="true">
+      <div class="keyword-track">
+        <span class="keyword-item"><span class="keyword-dot blue"></span> 리더십 코칭</span>
+        <span class="keyword-item"><span class="keyword-dot green"></span> 워크숍 · 강의</span>
+        <span class="keyword-item"><span class="keyword-dot blue"></span> Transformational</span>
+        <span class="keyword-item"><span class="keyword-dot green"></span> 조직 문화 혁신</span>
+        <span class="keyword-item"><span class="keyword-dot blue"></span> 코치형 리더</span>
+        <span class="keyword-item"><span class="keyword-dot green"></span> 질문의 힘</span>
+        <span class="keyword-item"><span class="keyword-dot blue"></span> Trendy</span>
+        <span class="keyword-item"><span class="keyword-dot green"></span> 개인 코칭</span>
+        <span class="keyword-item"><span class="keyword-dot blue"></span> True</span>
+        <span class="keyword-item"><span class="keyword-dot green"></span> 강점 기반 성장</span>
+        <!-- 반복 (끊김 없는 마퀴 효과) -->
+        <span class="keyword-item"><span class="keyword-dot blue"></span> 리더십 코칭</span>
+        <span class="keyword-item"><span class="keyword-dot green"></span> 워크숍 · 강의</span>
+        <span class="keyword-item"><span class="keyword-dot blue"></span> Transformational</span>
+        <span class="keyword-item"><span class="keyword-dot green"></span> 조직 문화 혁신</span>
+        <span class="keyword-item"><span class="keyword-dot blue"></span> 코치형 리더</span>
+        <span class="keyword-item"><span class="keyword-dot green"></span> 질문의 힘</span>
+        <span class="keyword-item"><span class="keyword-dot blue"></span> Trendy</span>
+        <span class="keyword-item"><span class="keyword-dot green"></span> 개인 코칭</span>
+        <span class="keyword-item"><span class="keyword-dot blue"></span> True</span>
+        <span class="keyword-item"><span class="keyword-dot green"></span> 강점 기반 성장</span>
+      </div>
+    </div>
+
+
+    <!-- ════════════════════════════════════
+         3. 프로그램 미리보기 (Programs 안내)
+    ════════════════════════════════════ -->
+    <section class="programs-section">
+      <div class="container">
+        <div class="programs-header reveal">
+          <div class="section-label">PROGRAMS</div>
+          <h2 class="section-title">TR경영연구소의 핵심 프로그램</h2>
+          <p class="section-subtitle" style="margin:0 auto;">
+            코칭의 깊이와 실전 강의의 넓이를 결합해<br>
+            개인과 조직의 지속가능한 성장을 지원합니다.
+          </p>
+        </div>
+
+        <div class="program-cards">
+
+          <div class="program-card sky reveal">
+            <div class="program-icon sky">🧭</div>
+            <div class="program-name">리더십 코칭</div>
+            <p class="program-desc">
+              질문으로 잠재력을 깨우는 코치형 리더를 양성합니다.
+              1:1 또는 그룹 코칭으로 리더십 역량과 조직 문화를
+              함께 변화시킵니다.
+            </p>
+            <a href="programs.html" class="program-link">자세히 보기 →</a>
+          </div>
+
+          <div class="program-card navy reveal">
+            <div class="program-icon navy">🎯</div>
+            <div class="program-name">강의 · 워크숍</div>
+            <p class="program-desc">
+              현장에서 바로 적용 가능한 액션러닝 중심
+              강의와 워크숍을 진행합니다. 기업 HR, 공공기관
+              맞춤 설계가 가능합니다.
+            </p>
+            <a href="programs.html" class="program-link">자세히 보기 →</a>
+          </div>
+
+          <div class="program-card green reveal">
+            <div class="program-icon green">🌱</div>
+            <div class="program-name">코칭 컨설팅</div>
+            <p class="program-desc">
+              조직 진단부터 변화 관리까지, 데이터 기반의
+              코칭 컨설팅으로 조직이 스스로 문제를 해결하는
+              역량을 갖추도록 지원합니다.
+            </p>
+            <a href="programs.html" class="program-link">자세히 보기 →</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ════════════════════════════════════
+         4. 철학 섹션 (About TR 안내)
+    ════════════════════════════════════ -->
+    <section class="philosophy-section">
+      <div class="container">
+        <div class="philosophy-inner">
+
+          <div class="reveal">
+            <div class="philosophy-label">ABOUT TR</div>
+            <h2 class="philosophy-title">
+              TR은<br>무엇을 의미할까요?
+            </h2>
+            <p class="philosophy-desc">
+              TR경영연구소의 모든 코칭과 강의는
+              세 가지 가치를 중심으로 설계됩니다.
+              변화를 이끌고, 시대에 앞서가며,
+              진정성 있게 함께합니다.
+            </p>
+            <a href="about.html" class="btn btn--white btn--sm mt-8">About TR 더 알아보기</a>
+          </div>
+
+          <div class="philosophy-values reveal">
+
+            <div class="value-item">
+              <div class="value-letter" style="background:rgba(33,155,204,.25);color:var(--color-primary);">T</div>
+              <div>
+                <div class="value-word">Transformational</div>
+                <div class="value-desc">
+                  표면적 변화가 아닌 근본적 변화를 추구합니다.
+                  사람과 조직의 내면을 바꾸는 깊이 있는 코칭을 제공합니다.
+                </div>
+              </div>
+            </div>
+
+            <div class="value-item">
+              <div class="value-letter" style="background:rgba(70,172,65,.25);color:var(--color-accent);">T</div>
+              <div>
+                <div class="value-word">Trendy</div>
+                <div class="value-desc">
+                  시대의 흐름을 읽고 현장에 맞는 최신 방법론을 적용합니다.
+                  살아있는 콘텐츠로 지금 이 순간에 적합한 솔루션을 제안합니다.
+                </div>
+              </div>
+            </div>
+
+            <div class="value-item">
+              <div class="value-letter" style="background:rgba(255,255,255,0.15);color:#fff;">T</div>
+              <div>
+                <div class="value-word">True</div>
+                <div class="value-desc">
+                  과장 없이, 있는 그대로의 강점을 발견하고
+                  진정성 있는 변화를 함께 만들어갑니다.
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ════════════════════════════════════
+         5. Diagnosis 안내 섹션
+    ════════════════════════════════════ -->
+    <section class="diagnosis-promo">
+      <div class="container">
+        <div class="diagnosis-card reveal">
+
+          <div class="diagnosis-text">
+            <div class="section-label">DIAGNOSIS</div>
+            <h3 class="diagnosis-title">
+              나의 리더십 유형,<br>3분 체크리스트로 확인해보세요
+            </h3>
+            <p class="diagnosis-desc">
+              간단한 체크리스트형 진단을 통해 현재 나의 리더십
+              스타일과 강점을 파악할 수 있습니다. 결과를 바탕으로
+              나에게 맞는 코칭·프로그램을 추천받아보세요.
+            </p>
+            <a href="diagnosis.html" class="btn btn--primary">무료 진단 시작하기</a>
+          </div>
+
+          <div class="diagnosis-visual">
+            <div class="diag-check-row">
+              <div class="diag-checkbox checked">✓</div>
+              팀원의 의견을 먼저 묻는다
+            </div>
+            <div class="diag-check-row">
+              <div class="diag-checkbox checked">✓</div>
+              실패를 학습 기회로 본다
+            </div>
+            <div class="diag-check-row">
+              <div class="diag-checkbox"></div>
+              결정을 빠르게 내리는 편이다
+            </div>
+            <div class="diag-check-row">
+              <div class="diag-checkbox"></div>
+              피드백을 정기적으로 주고받는다
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ════════════════════════════════════
+         6. CTA 섹션 (Contact 유도)
+    ════════════════════════════════════ -->
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-inner reveal">
+          <div class="cta-badge">지금 시작하세요</div>
+          <h2 class="cta-title">
+            변화의 첫 걸음,<br>함께 내딛겠습니다
+          </h2>
+          <p class="cta-desc">
+            무료 상담을 통해 코칭이 나에게, 우리 조직에<br>
+            어떤 변화를 가져올 수 있는지 먼저 확인해보세요.
+          </p>
+          <div class="cta-buttons">
+            <a href="contact.html" class="btn btn--primary btn--lg">무료 상담 신청하기</a>
+            <a href="programs.html" class="btn btn--outline btn--lg">프로그램 자세히 보기</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ② 푸터 자리 (components.js가 자동 삽입) -->
+  <div id="footer-placeholder"></div>
+
+
+  <!-- 공통 컴포넌트 로더 -->
+  <script src="components/components.js"></script>
+
+  <!-- 페이지 전용 스크립트 -->
+  <script>
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const siblings = entry.target.parentElement.querySelectorAll('.reveal');
+          let idx = 0;
+          siblings.forEach((el, j) => { if (el === entry.target) idx = j; });
+          entry.target.style.transitionDelay = `${idx * 0.1}s`;
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+  </script>
+
+</body>
+</html>

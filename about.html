@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <title>About TR | TR경영연구소</title>
+  <meta name="description"
+        content="TR경영연구소는 현장의 진짜 문제를 다루는 맞춤형 교육 설계로 조직의 본질적인 변화를 이끕니다. Transformational · Trendy · True">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- 공통 스타일 -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- 페이지 전용 스타일 -->
+  <style>
+
+    /* ──────────────────────────────────────────
+       1. 페이지 인트로 (히어로)
+    ────────────────────────────────────────── */
+    .about-hero {
+      padding: 7rem 0 4rem;
+      background: #F7FAFD;
+      background-image: radial-gradient(ellipse 50% 40% at 85% 10%, rgba(33,155,204,0.10) 0%, transparent 70%);
+      text-align: center;
+    }
+    .about-hero-label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: var(--color-primary);
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    .about-hero-title {
+      font-size: clamp(1.9rem, 3.4vw, 2.8rem);
+      font-weight: 700;
+      color: var(--color-text-primary);
+      line-height: 1.4;
+      max-width: 760px;
+      margin: 0 auto 1.5rem;
+    }
+    .about-hero-desc {
+      font-size: 1.05rem;
+      color: var(--color-text-secondary);
+      line-height: 1.9;
+      max-width: 620px;
+      margin: 0 auto;
+    }
+    .about-hero-desc .em {
+      color: var(--color-navy-dark);
+      font-weight: 700;
+      background: linear-gradient(transparent 60%, var(--color-sky-light) 60%);
+      padding: 0 2px;
+    }
+
+    /* ──────────────────────────────────────────
+       2. 진짜 문제를 다룬다 — True 철학 섹션
+       (가장 깊은 강조 섹션: 다크 네이비 + 큰 타이포)
+    ────────────────────────────────────────── */
+    .true-section {
+      background: var(--color-secondary);
+      color: #fff;
+      padding: var(--section-padding-y) 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .true-section::before {
+      content: '“';
+      position: absolute;
+      top: -4rem; left: 2rem;
+      font-size: 16rem;
+      font-weight: 900;
+      color: rgba(255,255,255,0.04);
+      line-height: 1;
+      pointer-events: none;
+    }
+    .true-inner {
+      max-width: 780px;
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+    .true-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(70,172,65,0.18);
+      color: #8FE08A;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      padding: 6px 16px;
+      border-radius: var(--radius-full);
+      margin-bottom: 2rem;
+    }
+    .true-badge::before {
+      content: '';
+      width: 6px; height: 6px;
+      background: var(--color-accent);
+      border-radius: 50%;
+    }
+    .true-quote {
+      font-size: clamp(1.5rem, 2.6vw, 2.1rem);
+      font-weight: 700;
+      line-height: 1.55;
+      margin-bottom: 1.75rem;
+    }
+    .true-quote .accent { color: var(--color-primary); }
+    .true-sub {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.9;
+    }
+
+    /* ──────────────────────────────────────────
+       3. 맞춤형 설계 프로세스 섹션
+       (Customized Design — 실무 중심 강조)
+    ────────────────────────────────────────── */
+    .design-section {
+      padding: var(--section-padding-y) 0;
+      background: #fff;
+    }
+    .design-header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+    .design-flow {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+    .design-step {
+      background: var(--color-bg-page);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      padding: 2.25rem 1.75rem;
+      position: relative;
+    }
+    .design-step-num {
+      position: absolute;
+      top: 1.5rem; right: 1.75rem;
+      font-size: 2.4rem;
+      font-weight: 900;
+      color: var(--color-border);
+      line-height: 1;
+    }
+    .design-step-icon {
+      width: 48px; height: 48px;
+      border-radius: var(--radius-md);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem;
+      margin-bottom: 1.25rem;
+    }
+    .design-step.s1 .design-step-icon { background: var(--color-sky-light); color: var(--color-primary); }
+    .design-step.s2 .design-step-icon { background: var(--color-navy-light); color: var(--color-secondary); }
+    .design-step.s3 .design-step-icon { background: var(--color-green-light); color: var(--color-accent); }
+    .design-step-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--color-text-primary);
+      margin-bottom: 0.6rem;
+    }
+    .design-step-desc {
+      font-size: 0.875rem;
+      color: var(--color-text-secondary);
+      line-height: 1.75;
+    }
+
+    /* 핵심 강조 메시지 카드 — 고정 커리큘럼 없음 강조 */
+    .design-highlight {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      background: var(--color-sky-light);
+      border-radius: var(--radius-xl);
+      padding: 2.5rem;
+    }
+    .design-highlight-icon {
+      width: 64px; height: 64px;
+      border-radius: 50%;
+      background: #fff;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.6rem;
+      flex-shrink: 0;
+      box-shadow: var(--shadow-sm);
+    }
+    .design-highlight-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--color-navy-dark);
+      margin-bottom: 0.5rem;
+    }
+    .design-highlight-desc {
+      font-size: 0.92rem;
+      color: var(--color-text-secondary);
+      line-height: 1.8;
+    }
+    .design-highlight-desc strong {
+      color: var(--color-sky-dark);
+      font-weight: 700;
+    }
+
+    /* ──────────────────────────────────────────
+       4. TR 3대 가치 섹션
+       (Transformational · Trendy · True ↔ 맞춤형 설계 연결)
+    ────────────────────────────────────────── */
+    .values-section {
+      padding: var(--section-padding-y) 0;
+      background: var(--color-bg-subtle);
+    }
+    .values-header { text-align: center; margin-bottom: 3.5rem; }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.75rem;
+    }
+    .value-card {
+      background: #fff;
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--color-border);
+      padding: 2.5rem 2rem;
+      transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+    }
+    .value-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+
+    .value-card-letter {
+      width: 52px; height: 52px;
+      border-radius: var(--radius-md);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem; font-weight: 900;
+      margin-bottom: 1.5rem;
+    }
+    .value-card.vt1 .value-card-letter { background: var(--color-sky-light);   color: var(--color-primary); }
+    .value-card.vt2 .value-card-letter { background: var(--color-green-light);color: var(--color-accent); }
+    .value-card.vt3 .value-card-letter { background: var(--color-navy-light); color: var(--color-secondary); }
+
+    .value-card-eng {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--color-text-primary);
+    }
+    .value-card-kor {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--color-text-muted);
+      margin-bottom: 1rem;
+    }
+    .value-card-desc {
+      font-size: 0.88rem;
+      color: var(--color-text-secondary);
+      line-height: 1.8;
+      margin-bottom: 1.25rem;
+    }
+
+    /* 가치 ↔ 맞춤형 설계 연결 태그 */
+    .value-link-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 6px 12px;
+      border-radius: var(--radius-full);
+    }
+    .value-card.vt1 .value-link-tag { background: var(--color-sky-light);   color: var(--color-sky-dark); }
+    .value-card.vt2 .value-link-tag { background: var(--color-green-light); color: var(--color-green-dark); }
+    .value-card.vt3 .value-link-tag { background: var(--color-navy-light);  color: var(--color-navy-dark); }
+
+    /* True 카드는 강조: 테두리 포인트 */
+    .value-card.vt3 {
+      border: 2px solid var(--color-secondary);
+      position: relative;
+    }
+    .value-card.vt3::after {
+      content: '핵심 철학';
+      position: absolute;
+      top: -12px; right: 1.75rem;
+      background: var(--color-secondary);
+      color: #fff;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: var(--radius-full);
+      letter-spacing: 0.04em;
+    }
+
+    /* ──────────────────────────────────────────
+       5. 연결 다이어그램 섹션
+       (3대 가치가 맞춤형 설계로 모이는 시각 구조)
+    ────────────────────────────────────────── */
+    .connect-section {
+      padding: var(--section-padding-y) 0;
+      background: #fff;
+    }
+    .connect-header { text-align: center; margin-bottom: 3rem; }
+
+    .connect-diagram {
+      max-width: 880px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1.5rem;
+      align-items: start;
+      position: relative;
+    }
+    .connect-node {
+      background: var(--color-bg-page);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      text-align: center;
+    }
+    .connect-node-letter {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 900; font-size: 1rem;
+      margin: 0 auto 0.75rem;
+    }
+    .connect-node.n1 .connect-node-letter { background: var(--color-sky-light);   color: var(--color-primary); }
+    .connect-node.n2 .connect-node-letter { background: var(--color-green-light);color: var(--color-accent); }
+    .connect-node.n3 .connect-node-letter { background: var(--color-navy-light); color: var(--color-secondary); }
+    .connect-node-title { font-size: 0.9rem; font-weight: 700; color: var(--color-text-primary); margin-bottom: 0.4rem; }
+    .connect-node-desc { font-size: 0.78rem; color: var(--color-text-muted); line-height: 1.6; }
+
+    .connect-arrow-row {
+      display: flex;
+      justify-content: center;
+      margin: 1rem 0;
+    }
+    .connect-arrow {
+      font-size: 1.5rem;
+      color: var(--color-border-strong);
+    }
+
+    .connect-center {
+      max-width: 480px;
+      margin: 0 auto;
+      background: var(--color-secondary);
+      border-radius: var(--radius-xl);
+      padding: 2rem 2.5rem;
+      text-align: center;
+      color: #fff;
+    }
+    .connect-center-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--color-primary);
+      text-transform: uppercase;
+      margin-bottom: 0.6rem;
+    }
+    .connect-center-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 0.6rem;
+    }
+    .connect-center-desc {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.7;
+    }
+
+    /* ──────────────────────────────────────────
+       6. CTA
+    ────────────────────────────────────────── */
+    .about-cta {
+      padding: var(--section-padding-y) 0;
+      background: var(--color-bg-subtle);
+      text-align: center;
+    }
+    .about-cta-title {
+      font-size: clamp(1.5rem, 2.6vw, 2rem);
+      font-weight: 700;
+      color: var(--color-text-primary);
+      margin-bottom: 1rem;
+    }
+    .about-cta-desc {
+      font-size: 0.95rem;
+      color: var(--color-text-secondary);
+      line-height: 1.8;
+      margin-bottom: 2rem;
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .about-cta-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ──────────────────────────────────────────
+       애니메이션
+    ────────────────────────────────────────── */
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* ──────────────────────────────────────────
+       반응형
+    ────────────────────────────────────────── */
+    @media (max-width: 768px) {
+      .design-flow { grid-template-columns: 1fr; }
+      .design-highlight { flex-direction: column; text-align: center; gap: 1.25rem; }
+
+      .values-grid { grid-template-columns: 1fr; }
+      .value-card.vt3::after { right: 50%; transform: translateX(50%); }
+
+      .connect-diagram { grid-template-columns: 1fr; }
+      .connect-center { padding: 1.75rem; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ① 헤더 자리 -->
+  <div id="header-placeholder"></div>
+
+  <main>
+
+    <!-- ════════════════════════════════════
+         1. 페이지 인트로
+    ════════════════════════════════════ -->
+    <section class="about-hero">
+      <div class="container">
+        <div class="about-hero-label">ABOUT TR</div>
+        <h1 class="about-hero-title">현장에서 실증되는<br>진짜 리더십</h1>
+        <p class="about-hero-desc">
+          TR경영연구소는 현장 밖의 이론에 머물지 않습니다.
+          우리는 겉으로 드러난 문제 너머,
+          조직의 성장을 가로막는 <span class="em">진짜 문제</span>를 파고듭니다.
+        </p>
+      </div>
+    </section>
+
+
+    <!-- ════════════════════════════════════
+         2. True 철학 강조 섹션
+    ════════════════════════════════════ -->
+    <section class="true-section">
+      <div class="container">
+        <div class="true-inner reveal">
+          <div class="true-badge">TRUE · 진정성의 출발점</div>
+          <p class="true-quote">
+            모든 교육은 고객사에 대한<br>
+            <span class="accent">정직한 이해</span>에서 시작됩니다
+          </p>
+          <p class="true-sub">
+            고정된 틀에 귀사를 맞추지 않습니다.
+            오직 당신의 조직을 위한 맞춤형 교육 설계를 통해
+            지속 가능한 성장을 함께 만들어갑니다.
+          </p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ════════════════════════════════════
+         3. 맞춤형 설계 프로세스
+    ════════════════════════════════════ -->
+    <section class="design-section">
+      <div class="container">
+        <div class="design-header reveal">
+          <div class="section-label">CUSTOMIZED DESIGN</div>
+          <h2 class="section-title">정해진 답이 아닌,<br>당신의 조직을 위한 설계</h2>
+          <p class="section-subtitle" style="margin:0 auto;">
+            이론적인 강의가 아닌, 현장에서 바로 적용 가능한
+            실무 중심의 해결책을 찾기 위한 3단계 설계 과정입니다.
+          </p>
+        </div>
+
+        <!-- 3단계 설계 흐름 -->
+        <div class="design-flow">
+
+          <div class="design-step s1 reveal">
+            <div class="design-step-num">01</div>
+            <div class="design-step-icon">🔎</div>
+            <div class="design-step-title">현장 진단</div>
+            <p class="design-step-desc">
+              조직이 마주한 진짜 문제가 무엇인지,
+              현장의 목소리를 통해 정직하게 파악합니다.
+            </p>
+          </div>
+
+          <div class="design-step s2 reveal">
+            <div class="design-step-num">02</div>
+            <div class="design-step-icon">🛠️</div>
+            <div class="design-step-title">맞춤형 설계</div>
+            <p class="design-step-desc">
+              진단 결과를 바탕으로 귀사만을 위한
+              교육·코칭 커리큘럼을 새롭게 설계합니다.
+            </p>
+          </div>
+
+          <div class="design-step s3 reveal">
+            <div class="design-step-num">03</div>
+            <div class="design-step-icon">⚡</div>
+            <div class="design-step-title">현장 적용</div>
+            <p class="design-step-desc">
+              배운 내용이 실제 업무에서 바로 작동하도록
+              실행 중심의 액션러닝으로 마무리합니다.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- 핵심 강조: 맞춤형 설계 메시지 -->
+        <div class="design-highlight reveal">
+          <div class="design-highlight-icon">🎯</div>
+          <div>
+            <div class="design-highlight-title">정해진 커리큘럼이 아닌, 정해진 책임감</div>
+            <p class="design-highlight-desc">
+              저희는 <strong>고객사 맞춤형 교육 설계(Customized Design)</strong>를
+              통해 최적의 해답을 찾습니다. 같은 산업, 같은 직급이라도
+              조직마다 진짜 문제는 다르기에, 모든 프로그램은
+              현장 진단에서부터 다시 설계됩니다.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ════════════════════════════════════
+         4. TR 3대 가치
+    ════════════════════════════════════ -->
+    <section class="values-section">
+      <div class="container">
+        <div class="values-header reveal">
+          <div class="section-label">OUR VALUES</div>
+          <h2 class="section-title">TR이 일하는 방식</h2>
+          <p class="section-subtitle" style="margin:0 auto;">
+            세 가지 가치는 모두 맞춤형 설계 과정 안에서
+            구체적으로 실현됩니다.
+          </p>
+        </div>
+
+        <div class="values-grid">
+
+          <!-- Transformational -->
+          <div class="value-card vt1 reveal">
+            <div class="value-card-letter">T</div>
+            <div class="value-card-eng">Transformational</div>
+            <div class="value-card-kor">변혁적</div>
+            <p class="value-card-desc">
+              스쳐 지나가는 교육이 아닌, 조직의 본질적인 변화를
+              견인합니다. 현장의 행동을 실질적으로 전환하는 데
+              초점을 맞춥니다.
+            </p>
+            <span class="value-link-tag">→ 맞춤형 설계의 목표</span>
+          </div>
+
+          <!-- Trendy -->
+          <div class="value-card vt2 reveal">
+            <div class="value-card-letter">T</div>
+            <div class="value-card-eng">Trendy</div>
+            <div class="value-card-kor">트렌디</div>
+            <p class="value-card-desc">
+              급변하는 경영 환경 속에서 가장 앞선 시각을 제공합니다.
+              지금 이 순간 현장에서 가장 강력한 힘을 발휘하는
+              방법론을 제안합니다.
+            </p>
+            <span class="value-link-tag">→ 맞춤형 설계의 방법론</span>
+          </div>
+
+          <!-- True (핵심 강조) -->
+          <div class="value-card vt3 reveal">
+            <div class="value-card-letter">T</div>
+            <div class="value-card-eng">True</div>
+            <div class="value-card-kor">진정성</div>
+            <p class="value-card-desc">
+              모든 교육은 고객사에 대한 정직한 이해에서
+              시작됩니다. 고정된 틀에 귀사를 맞추지 않고,
+              오직 당신의 조직을 위한 맞춤형 교육 설계를
+              통해 지속 가능한 성장을 함께합니다.
+            </p>
+            <span class="value-link-tag">→ 맞춤형 설계의 출발점</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ════════════════════════════════════
+         5. 3대 가치 ↔ 맞춤형 설계 연결 다이어그램
+    ════════════════════════════════════ -->
+    <section class="connect-section">
+      <div class="container">
+        <div class="connect-header reveal">
+          <div class="section-label">HOW THEY CONNECT</div>
+          <h2 class="section-title">세 가치가 하나의 설계로 모입니다</h2>
+        </div>
+
+        <div class="reveal">
+          <div class="connect-diagram">
+            <div class="connect-node n1">
+              <div class="connect-node-letter">T</div>
+              <div class="connect-node-title">Transformational</div>
+              <div class="connect-node-desc">본질적 변화라는<br>목표를 제시</div>
+            </div>
+            <div class="connect-node n2">
+              <div class="connect-node-letter">T</div>
+              <div class="connect-node-title">Trendy</div>
+              <div class="connect-node-desc">가장 효과적인<br>방법론을 제공</div>
+            </div>
+            <div class="connect-node n3">
+              <div class="connect-node-letter">T</div>
+              <div class="connect-node-title">True</div>
+              <div class="connect-node-desc">진짜 문제에서<br>출발하는 진정성</div>
+            </div>
+          </div>
+
+          <div class="connect-arrow-row">
+            <span class="connect-arrow">↓</span>
+          </div>
+
+          <div class="connect-center">
+            <div class="connect-center-label">Customized Design</div>
+            <div class="connect-center-title">고객사 맞춤형 교육 설계</div>
+            <p class="connect-center-desc">
+              세 가지 가치가 만나 만들어내는 결과는
+              결국 하나입니다 — 귀사의 진짜 문제를 해결하는,
+              귀사만을 위한 설계.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ════════════════════════════════════
+         6. CTA
+    ════════════════════════════════════ -->
+    <section class="about-cta">
+      <div class="container">
+        <div class="reveal">
+          <h2 class="about-cta-title">우리 조직의 진짜 문제,<br>함께 찾아보시겠어요?</h2>
+          <p class="about-cta-desc">
+            맞춤형 교육 설계가 어떻게 시작되는지,
+            무료 상담을 통해 먼저 확인해보세요.
+          </p>
+          <div class="about-cta-buttons">
+            <a href="contact.html" class="btn btn--primary btn--lg">무료 상담 신청</a>
+            <a href="programs.html" class="btn btn--outline btn--lg">프로그램 보기</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ② 푸터 자리 -->
+  <div id="footer-placeholder"></div>
+
+  <!-- 공통 컴포넌트 로더 -->
+  <script src="components/components.js"></script>
+
+  <!-- 페이지 전용 스크립트 -->
+  <script>
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const siblings = entry.target.parentElement.querySelectorAll('.reveal');
+          let idx = 0;
+          siblings.forEach((el, j) => { if (el === entry.target) idx = j; });
+          entry.target.style.transitionDelay = `${idx * 0.08}s`;
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+  </script>
+
+</body>
+</html>

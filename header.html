@@ -1,0 +1,33 @@
+<!-- ============================================================
+     TR경영연구소 | 공통 헤더 컴포넌트
+     이 파일을 수정하면 모든 페이지의 헤더가 자동으로 변경됩니다.
+     ※ 메뉴 이름/순서를 바꾸려면 아래 <a> 태그만 수정하세요.
+     ============================================================ -->
+<header class="site-header" id="site-header">
+  <div class="container">
+
+    <!-- 로고: 이름 노출 없이 'TR경영연구소'만 표기 -->
+    <a href="index.html" class="header-logo" aria-label="TR경영연구소 홈으로 이동">
+      <img src="images/logo.png" alt="TR경영연구소 로고 심볼" class="header-logo-img">
+      <span class="header-logo-name">TR경영연구소</span>
+    </a>
+
+    <!-- 데스크톱 네비게이션 (5개 메뉴) -->
+    <nav class="header-nav" id="header-nav" aria-label="주요 메뉴">
+      <a href="index.html"     class="nav-link" data-page="index">Main</a>
+      <a href="about.html"     class="nav-link" data-page="about">About TR</a>
+      <a href="programs.html"  class="nav-link" data-page="programs">Programs</a>
+      <a href="diagnosis.html" class="nav-link" data-page="diagnosis">Diagnosis</a>
+      <a href="contact.html"   class="nav-link btn-contact" data-page="contact">Contact</a>
+    </nav>
+
+    <!-- 모바일 햄버거 버튼 -->
+    <button class="header-menu-toggle" id="menu-toggle"
+            aria-label="메뉴 열기/닫기" aria-expanded="false" aria-controls="header-nav">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+  </div>
+</header>

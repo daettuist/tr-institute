@@ -40,7 +40,7 @@
       grid-template-columns: 1fr 1fr;
       align-items: center;
       gap: 4rem;
-      padding: 6rem 0 4rem;
+      padding: 3rem 0 2rem;
     }
 
     .hero-text { animation: fadeUp 0.8s ease both; }
@@ -214,7 +214,9 @@
       content: 'TR';
       position: absolute;
       top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
+      /* 폰트 렌더링 특성상 글자가 시각적으로 아래쪽에 치우쳐 보이므로
+         Y축에 -8% 만큼 위로 보정해 정중앙처럼 보이도록 조정 */
+      transform: translate(-50%, -58%);
       font-size: 30vw;
       font-weight: 900;
       color: rgba(255,255,255,0.03);
@@ -290,7 +292,7 @@
        반응형
     ────────────────────────────────────────── */
     @media (max-width: 768px) {
-      .hero-inner { grid-template-columns: 1fr; text-align: center; padding: 5rem 0 3rem; }
+      .hero-inner { grid-template-columns: 1fr; text-align: center; padding: 2.5rem 0 1.5rem; }
       .hero-cta, .hero-stats { justify-content: center; }
       .hero-sub { margin-left: auto; margin-right: auto; }
       .hero-visual { display: none; }
@@ -320,7 +322,7 @@
 
       <!-- 로고: 이름 노출 없이 'TR경영연구소'만 표기 -->
       <a href="index.html" class="header-logo" aria-label="TR경영연구소 홈으로 이동">
-        <img src="images/logo.png" alt="TR경영연구소 로고 심볼" class="header-logo-img">
+        <img src="images/logo1.png" alt="TR경영연구소 로고 심볼" class="header-logo-img">
         <span class="header-logo-name">TR경영연구소</span>
       </a>
 
@@ -574,7 +576,7 @@
 
         <!-- 브랜드 영역 -->
         <div class="footer-brand">
-          <img src="images/logo.png" alt="TR경영연구소 로고" class="footer-logo">
+          <img src="images/logo2.png" alt="TR경영연구소 로고" class="footer-logo">
           <p class="footer-brand-name">TR경영연구소</p>
           <p class="footer-tagline">Transformational · Trendy · True</p>
           <p class="footer-desc">
@@ -597,8 +599,8 @@
           <p class="footer-col-title">연락처</p>
           <ul class="footer-links">
             <!-- 아래 정보를 실제 정보로 교체해 주세요 -->
-            <li><a href="mailto:info@tr-institute.co.kr">info@tr-institute.co.kr</a></li>
-            <li><a href="tel:010-0000-0000">010-0000-0000</a></li>
+            <li><a href="mailto:trbiz@naver.com">trbiz@naver.com</a></li>
+            <li><a href="tel:010-8752-3499">010-8752-3499</a></li>
             <li><a href="contact.html">문의 양식 바로가기</a></li>
           </ul>
         </div>

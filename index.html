@@ -140,6 +140,10 @@
     .hero-card-name { font-size: 0.9rem; font-weight: 700; color: var(--color-text-primary); }
     .hero-card-role { font-size: 0.78rem; color: var(--color-text-muted); margin-top: 2px; }
 
+    .hero-deco-circle { position: absolute; border-radius: 50%; opacity: 0.15; z-index: 1; }
+    .hero-deco-1 { width: 300px; height: 300px; top: -80px; right: -80px; background: var(--color-primary); }
+    .hero-deco-2 { width: 150px; height: 150px; bottom: 20px; right: 20px; background: var(--color-accent); }
+
     /* ──────────────────────────────────────────
        2. 키워드 배너 (제거됨 — 관련 CSS 삭제)
     ────────────────────────────────────────── */
@@ -306,8 +310,38 @@
 
 <body>
 
-  <!-- ① 헤더 자리 (components.js가 자동 삽입) -->
-  <div id="header-placeholder"></div>
+  <!-- ============================================================
+       ① 헤더 (공통 컴포넌트)
+       ※ 이 헤더를 수정할 때는 components/header.html 파일도
+          반드시 동일하게 수정해 두세요. (다른 페이지 제작 시 그대로 복사해서 사용)
+       ============================================================ -->
+  <header class="site-header" id="site-header">
+    <div class="container">
+
+      <!-- 로고: 이름 노출 없이 'TR경영연구소'만 표기 -->
+      <a href="index.html" class="header-logo" aria-label="TR경영연구소 홈으로 이동">
+        <img src="images/logo.png" alt="TR경영연구소 로고 심볼" class="header-logo-img">
+        <span class="header-logo-name">TR경영연구소</span>
+      </a>
+
+      <!-- 데스크톱 네비게이션 (4개 메뉴) -->
+      <nav class="header-nav" id="header-nav" aria-label="주요 메뉴">
+        <a href="index.html"    class="nav-link" data-page="index">Main</a>
+        <a href="about.html"    class="nav-link" data-page="about">About TR</a>
+        <a href="programs.html" class="nav-link" data-page="programs">Programs</a>
+        <a href="contact.html"  class="nav-link btn-contact" data-page="contact">Contact</a>
+      </nav>
+
+      <!-- 모바일 햄버거 버튼 -->
+      <button class="header-menu-toggle" id="menu-toggle"
+              aria-label="메뉴 열기/닫기" aria-expanded="false" aria-controls="header-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+    </div>
+  </header>
 
   <main>
 
@@ -354,6 +388,9 @@
           </div>
 
           <div class="hero-visual">
+            <div class="hero-deco-circle hero-deco-1"></div>
+            <div class="hero-deco-circle hero-deco-2"></div>
+
             <div class="hero-card-main">
               <div class="hero-card-tag">코칭 철학</div>
               <div class="hero-card-quote">
@@ -526,8 +563,57 @@
   </main>
 
 
-  <!-- ② 푸터 자리 (components.js가 자동 삽입) -->
-  <div id="footer-placeholder"></div>
+  <!-- ============================================================
+       ② 푸터 (공통 컴포넌트)
+       ※ 이 푸터를 수정할 때는 components/footer.html 파일도
+          반드시 동일하게 수정해 두세요. (다른 페이지 제작 시 그대로 복사해서 사용)
+       ============================================================ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+
+        <!-- 브랜드 영역 -->
+        <div class="footer-brand">
+          <img src="images/logo.png" alt="TR경영연구소 로고" class="footer-logo">
+          <p class="footer-brand-name">TR경영연구소</p>
+          <p class="footer-tagline">Transformational · Trendy · True</p>
+          <p class="footer-desc">
+            리더십과 코칭을 통해 사람과 조직의<br>진정한 변화를 이끕니다.
+          </p>
+        </div>
+
+        <!-- 메뉴 링크 -->
+        <div class="footer-col">
+          <p class="footer-col-title">메뉴</p>
+          <ul class="footer-links">
+            <li><a href="about.html">About TR</a></li>
+            <li><a href="programs.html">Programs</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- 연락처 -->
+        <div class="footer-col">
+          <p class="footer-col-title">연락처</p>
+          <ul class="footer-links">
+            <!-- 아래 정보를 실제 정보로 교체해 주세요 -->
+            <li><a href="mailto:info@tr-institute.co.kr">info@tr-institute.co.kr</a></li>
+            <li><a href="tel:010-0000-0000">010-0000-0000</a></li>
+            <li><a href="contact.html">문의 양식 바로가기</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- 하단 카피라이트 -->
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2026 TR경영연구소. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">개인정보처리방침</a>
+        </div>
+      </div>
+    </div>
+  </footer>
 
 
   <!-- 공통 컴포넌트 로더 -->

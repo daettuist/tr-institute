@@ -140,54 +140,9 @@
     .hero-card-name { font-size: 0.9rem; font-weight: 700; color: var(--color-text-primary); }
     .hero-card-role { font-size: 0.78rem; color: var(--color-text-muted); margin-top: 2px; }
 
-    .hero-float-card {
-      position: absolute;
-      background: #fff;
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--color-border);
-      box-shadow: var(--shadow-md);
-      padding: 12px 16px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 0.82rem;
-      font-weight: 600;
-      color: var(--color-text-primary);
-      white-space: nowrap;
-    }
-    .hero-float-card .fc-icon {
-      width: 32px; height: 32px;
-      border-radius: var(--radius-md);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 0.9rem;
-      flex-shrink: 0;
-    }
-    .hero-float-1 { top: -1.5rem; right: 1.5rem; animation: float 3s ease-in-out infinite; }
-    .hero-float-2 { bottom: -1rem; left: -1rem; animation: float 3.5s 0.5s ease-in-out infinite; }
-
-    .hero-deco-circle { position: absolute; border-radius: 50%; opacity: 0.15; z-index: 1; }
-    .hero-deco-1 { width: 300px; height: 300px; top: -80px; right: -80px; background: var(--color-primary); }
-    .hero-deco-2 { width: 150px; height: 150px; bottom: 20px; right: 20px; background: var(--color-accent); }
-
     /* ──────────────────────────────────────────
-       2. 키워드 배너
+       2. 키워드 배너 (제거됨 — 관련 CSS 삭제)
     ────────────────────────────────────────── */
-    .keyword-banner { background: var(--color-secondary); padding: 1rem 0; overflow: hidden; }
-    .keyword-track {
-      display: flex; gap: 3rem;
-      animation: marquee 20s linear infinite;
-      width: max-content;
-    }
-    .keyword-item {
-      display: flex; align-items: center; gap: 0.75rem;
-      color: rgba(255,255,255,0.6);
-      font-size: 0.85rem; font-weight: 500; letter-spacing: 0.04em;
-      white-space: nowrap;
-    }
-    .keyword-dot { width: 5px; height: 5px; border-radius: 50%; flex-shrink: 0; }
-    .keyword-dot.blue  { background: var(--color-primary); }
-    .keyword-dot.green { background: var(--color-accent); }
-
     /* ──────────────────────────────────────────
        3. 프로그램 미리보기 섹션 (Programs 안내)
     ────────────────────────────────────────── */
@@ -301,52 +256,8 @@
     .value-desc { font-size: 0.85rem; color: rgba(255,255,255,0.6); line-height: 1.6; }
 
     /* ──────────────────────────────────────────
-       5. Diagnosis 안내 섹션
+       5. (Diagnosis 안내 섹션 — 제거됨)
     ────────────────────────────────────────── */
-    .diagnosis-promo {
-      padding: var(--section-padding-y) 0;
-      background: var(--color-bg-subtle);
-    }
-    .diagnosis-card {
-      display: grid;
-      grid-template-columns: 1.2fr 1fr;
-      gap: 3rem;
-      align-items: center;
-      background: #fff;
-      border-radius: var(--radius-xl);
-      border: 1px solid var(--color-border);
-      box-shadow: var(--shadow-card);
-      padding: 3rem;
-    }
-    .diagnosis-text .section-label { margin-bottom: 0.75rem; }
-    .diagnosis-title {
-      font-size: 1.7rem; font-weight: 700; color: var(--color-text-primary);
-      line-height: 1.35; margin-bottom: 1rem;
-    }
-    .diagnosis-desc { font-size: 0.95rem; color: var(--color-text-secondary); line-height: 1.8; margin-bottom: 1.75rem; }
-
-    .diagnosis-visual {
-      background: var(--color-sky-light);
-      border-radius: var(--radius-lg);
-      padding: 2rem;
-    }
-    .diag-check-row {
-      display: flex; align-items: center; gap: 12px;
-      padding: 10px 0;
-      border-bottom: 1px solid rgba(33,155,204,0.15);
-      font-size: 0.85rem;
-      color: var(--color-text-primary);
-    }
-    .diag-check-row:last-child { border-bottom: none; }
-    .diag-checkbox {
-      width: 20px; height: 20px;
-      border-radius: 5px;
-      border: 2px solid var(--color-primary);
-      flex-shrink: 0;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 0.7rem; color: #fff;
-    }
-    .diag-checkbox.checked { background: var(--color-primary); }
 
     /* ──────────────────────────────────────────
        6. CTA 섹션
@@ -367,7 +278,6 @@
     ────────────────────────────────────────── */
     @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
     @keyframes float  { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
-    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
     .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
     .reveal.visible { opacity: 1; transform: none; }
@@ -384,8 +294,6 @@
       .program-cards { grid-template-columns: 1fr; }
 
       .philosophy-inner { grid-template-columns: 1fr; gap: 3rem; }
-
-      .diagnosis-card { grid-template-columns: 1fr; padding: 2rem; }
 
       .btn-contact { align-self: flex-start; }
     }
@@ -420,9 +328,8 @@
             </h1>
 
             <p class="hero-sub">
-              TR경영연구소는 리더십 코칭과 워크숍을 통해
-              개인과 조직이 스스로 답을 찾고
-              지속가능한 성장을 이뤄가도록 돕습니다.
+              TR경영연구소는 리더십 코칭과 워크숍을 통해 개인과 조직이<br>
+              스스로 답을 찾고 지속가능한 성장을 이뤄가도록 돕습니다.
             </p>
 
             <div class="hero-cta">
@@ -447,14 +354,6 @@
           </div>
 
           <div class="hero-visual">
-            <div class="hero-deco-circle hero-deco-1"></div>
-            <div class="hero-deco-circle hero-deco-2"></div>
-
-            <div class="hero-float-card hero-float-1">
-              <div class="fc-icon" style="background:var(--color-sky-light);color:var(--color-primary);">✦</div>
-              리더십 코칭 진행 중
-            </div>
-
             <div class="hero-card-main">
               <div class="hero-card-tag">코칭 철학</div>
               <div class="hero-card-quote">
@@ -469,11 +368,6 @@
                 </div>
               </div>
             </div>
-
-            <div class="hero-float-card hero-float-2">
-              <div class="fc-icon" style="background:var(--color-green-light);color:var(--color-accent);">↑</div>
-              조직 변화 지수 상승 중
-            </div>
           </div>
 
         </div>
@@ -482,33 +376,8 @@
 
 
     <!-- ════════════════════════════════════
-         2. 키워드 배너
+         (키워드 배너 섹션 — 사용자 요청에 따라 제거됨)
     ════════════════════════════════════ -->
-    <div class="keyword-banner" aria-hidden="true">
-      <div class="keyword-track">
-        <span class="keyword-item"><span class="keyword-dot blue"></span> 리더십 코칭</span>
-        <span class="keyword-item"><span class="keyword-dot green"></span> 워크숍 · 강의</span>
-        <span class="keyword-item"><span class="keyword-dot blue"></span> Transformational</span>
-        <span class="keyword-item"><span class="keyword-dot green"></span> 조직 문화 혁신</span>
-        <span class="keyword-item"><span class="keyword-dot blue"></span> 코치형 리더</span>
-        <span class="keyword-item"><span class="keyword-dot green"></span> 질문의 힘</span>
-        <span class="keyword-item"><span class="keyword-dot blue"></span> Trendy</span>
-        <span class="keyword-item"><span class="keyword-dot green"></span> 개인 코칭</span>
-        <span class="keyword-item"><span class="keyword-dot blue"></span> True</span>
-        <span class="keyword-item"><span class="keyword-dot green"></span> 강점 기반 성장</span>
-        <!-- 반복 (끊김 없는 마퀴 효과) -->
-        <span class="keyword-item"><span class="keyword-dot blue"></span> 리더십 코칭</span>
-        <span class="keyword-item"><span class="keyword-dot green"></span> 워크숍 · 강의</span>
-        <span class="keyword-item"><span class="keyword-dot blue"></span> Transformational</span>
-        <span class="keyword-item"><span class="keyword-dot green"></span> 조직 문화 혁신</span>
-        <span class="keyword-item"><span class="keyword-dot blue"></span> 코치형 리더</span>
-        <span class="keyword-item"><span class="keyword-dot green"></span> 질문의 힘</span>
-        <span class="keyword-item"><span class="keyword-dot blue"></span> Trendy</span>
-        <span class="keyword-item"><span class="keyword-dot green"></span> 개인 코칭</span>
-        <span class="keyword-item"><span class="keyword-dot blue"></span> True</span>
-        <span class="keyword-item"><span class="keyword-dot green"></span> 강점 기반 성장</span>
-      </div>
-    </div>
 
 
     <!-- ════════════════════════════════════
@@ -628,47 +497,8 @@
 
 
     <!-- ════════════════════════════════════
-         5. Diagnosis 안내 섹션
+         (Diagnosis 안내 섹션 — 사용자 요청에 따라 제거됨)
     ════════════════════════════════════ -->
-    <section class="diagnosis-promo">
-      <div class="container">
-        <div class="diagnosis-card reveal">
-
-          <div class="diagnosis-text">
-            <div class="section-label">DIAGNOSIS</div>
-            <h3 class="diagnosis-title">
-              나의 리더십 유형,<br>3분 체크리스트로 확인해보세요
-            </h3>
-            <p class="diagnosis-desc">
-              간단한 체크리스트형 진단을 통해 현재 나의 리더십
-              스타일과 강점을 파악할 수 있습니다. 결과를 바탕으로
-              나에게 맞는 코칭·프로그램을 추천받아보세요.
-            </p>
-            <a href="diagnosis.html" class="btn btn--primary">무료 진단 시작하기</a>
-          </div>
-
-          <div class="diagnosis-visual">
-            <div class="diag-check-row">
-              <div class="diag-checkbox checked">✓</div>
-              팀원의 의견을 먼저 묻는다
-            </div>
-            <div class="diag-check-row">
-              <div class="diag-checkbox checked">✓</div>
-              실패를 학습 기회로 본다
-            </div>
-            <div class="diag-check-row">
-              <div class="diag-checkbox"></div>
-              결정을 빠르게 내리는 편이다
-            </div>
-            <div class="diag-check-row">
-              <div class="diag-checkbox"></div>
-              피드백을 정기적으로 주고받는다
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
 
 
     <!-- ════════════════════════════════════
@@ -682,8 +512,8 @@
             변화의 첫 걸음,<br>함께 내딛겠습니다
           </h2>
           <p class="cta-desc">
-            무료 상담을 통해 코칭이 나에게, 우리 조직에<br>
-            어떤 변화를 가져올 수 있는지 먼저 확인해보세요.
+            조직과 개인의 본질적인 변화, 깊이 있는 대화에서 시작됩니다.<br>
+            저희와 함께 해결의 실마리를 찾아보세요.
           </p>
           <div class="cta-buttons">
             <a href="contact.html" class="btn btn--primary btn--lg">무료 상담 신청하기</a>

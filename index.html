@@ -30,10 +30,12 @@
       align-items: center;
       position: relative;
       overflow: hidden;
-      background-color: #F7FAFD;
+      background-color: #F4F6F9;
+      /* 현장 전문가의 신뢰감을 주기 위해 Deep Navy(--color-navy)와
+         Slate Gray 계열로 그라데이션 톤 조정 (기존 파스텔 스카이블루·라임그린 → 무게감 있는 톤) */
       background-image:
-        radial-gradient(ellipse 60% 50% at 90% 20%, rgba(33,155,204,0.12) 0%, transparent 70%),
-        radial-gradient(ellipse 40% 40% at 10% 80%, rgba(70,172,65,0.10) 0%, transparent 60%);
+        radial-gradient(ellipse 60% 50% at 90% 20%, rgba(41,80,160,0.10) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 40% at 10% 80%, rgba(74,85,104,0.08) 0%, transparent 60%);
     }
 
     .hero-inner {
@@ -50,8 +52,8 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      background: var(--color-sky-light);
-      color: var(--color-sky-dark);
+      background: var(--color-navy-light);
+      color: var(--color-secondary);
       font-size: 0.78rem;
       font-weight: 700;
       letter-spacing: 0.06em;
@@ -62,7 +64,7 @@
     .hero-badge::before {
       content: '';
       width: 6px; height: 6px;
-      background: var(--color-primary);
+      background: var(--color-secondary);
       border-radius: 50%;
     }
 
@@ -74,7 +76,7 @@
       letter-spacing: -0.02em;
       margin-bottom: 1.25rem;
     }
-    .hero-title .accent-blue { color: var(--color-primary); }
+    .hero-title .accent-blue { color: var(--color-secondary); }
 
     .hero-sub {
       font-size: 1.05rem;
@@ -98,7 +100,7 @@
       color: var(--color-secondary);
       line-height: 1;
     }
-    .hero-stat-num span { font-size: 1rem; color: var(--color-primary); }
+    .hero-stat-num span { font-size: 1rem; color: var(--color-text-secondary); }
     .hero-stat-label { font-size: 0.8rem; color: var(--color-text-muted); margin-top: 3px; }
 
     .hero-visual { animation: fadeUp 0.8s 0.2s ease both; position: relative; }
@@ -107,7 +109,7 @@
       background: #fff;
       border-radius: var(--radius-xl);
       border: 1px solid var(--color-border);
-      box-shadow: 0 20px 60px rgba(41,80,160,0.10);
+      box-shadow: 0 20px 60px rgba(27,53,120,0.14);
       padding: 2.5rem;
       position: relative;
       z-index: 2;
@@ -115,7 +117,7 @@
     .hero-card-tag {
       font-size: 0.75rem;
       font-weight: 700;
-      color: var(--color-primary);
+      color: var(--color-secondary);
       letter-spacing: 0.07em;
       text-transform: uppercase;
       margin-bottom: 1rem;
@@ -126,14 +128,14 @@
       color: var(--color-text-primary);
       line-height: 1.6;
       margin-bottom: 1.5rem;
-      border-left: 3px solid var(--color-primary);
+      border-left: 3px solid var(--color-secondary);
       padding-left: 1rem;
     }
     .hero-card-profile { display: flex; align-items: center; gap: 12px; }
     .hero-card-avatar {
       width: 44px; height: 44px;
       border-radius: 50%;
-      background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+      background: linear-gradient(135deg, var(--color-secondary), var(--color-navy-dark));
       display: flex; align-items: center; justify-content: center;
       font-size: 1rem; font-weight: 700; color: #fff;
       flex-shrink: 0;
@@ -142,8 +144,8 @@
     .hero-card-role { font-size: 0.78rem; color: var(--color-text-muted); margin-top: 2px; }
 
     .hero-deco-circle { position: absolute; border-radius: 50%; opacity: 0.15; z-index: 1; }
-    .hero-deco-1 { width: 300px; height: 300px; top: -80px; right: -80px; background: var(--color-primary); }
-    .hero-deco-2 { width: 150px; height: 150px; bottom: 20px; right: 20px; background: var(--color-accent); }
+    .hero-deco-1 { width: 300px; height: 300px; top: -80px; right: -80px; background: var(--color-secondary); }
+    .hero-deco-2 { width: 150px; height: 150px; bottom: 20px; right: 20px; background: var(--color-text-secondary); }
 
     /* ──────────────────────────────────────────
        2. 키워드 배너 (제거됨 — 관련 CSS 삭제)
@@ -356,17 +358,17 @@
         <div class="hero-inner">
 
           <div class="hero-text">
-            <div class="hero-badge">리더십 &amp; 코칭 전문</div>
+            <div class="hero-badge">현장 중심 · 실천형 컨설팅</div>
 
             <h1 class="hero-title">
-              변화는<br>
-              <span class="accent-blue">질문</span>에서<br>
-              시작됩니다
+              현장의 진짜 문제,<br>
+              <span class="accent-blue">실질적인 변화</span>로<br>
+              풀어냅니다
             </h1>
 
             <p class="hero-sub">
-              TR경영연구소는 리더십 코칭과 워크숍을 통해 개인과 조직이<br>
-              스스로 답을 찾고 지속가능한 성장을 이뤄가도록 돕습니다.
+              TR경영연구소는 이론에 머물지 않습니다.<br>
+              현장 진단부터 실행까지, 조직이 직면한 문제를 끝까지 해결합니다.
             </p>
 
             <div class="hero-cta">
@@ -377,15 +379,15 @@
             <div class="hero-stats">
               <div class="hero-stat-item">
                 <div class="hero-stat-num">10<span>년+</span></div>
-                <div class="hero-stat-label">코칭 경력</div>
+                <div class="hero-stat-label">현장 실무 경력</div>
               </div>
               <div class="hero-stat-item">
                 <div class="hero-stat-num">200<span>+</span></div>
-                <div class="hero-stat-label">코칭 고객</div>
+                <div class="hero-stat-label">현장 프로젝트</div>
               </div>
               <div class="hero-stat-item">
                 <div class="hero-stat-num">석사</div>
-                <div class="hero-stat-label">리더십 &amp; 코칭</div>
+                <div class="hero-stat-label">솔루션 설계 전문</div>
               </div>
             </div>
           </div>
@@ -395,16 +397,16 @@
             <div class="hero-deco-circle hero-deco-2"></div>
 
             <div class="hero-card-main">
-              <div class="hero-card-tag">코칭 철학</div>
+              <div class="hero-card-tag">TR의 접근 방식</div>
               <div class="hero-card-quote">
-                "답을 주는 것이 아니라,<br>
-                스스로 답을 찾도록 돕는 것"
+                "이론을 넘어,<br>
+                현장에 즉각적인 변화를 만드는 것"
               </div>
               <div class="hero-card-profile">
                 <div class="hero-card-avatar">TR</div>
                 <div>
                   <div class="hero-card-name">TR경영연구소</div>
-                  <div class="hero-card-role">리더십 코칭 전문 · 석사 학위</div>
+                  <div class="hero-card-role">현장 문제 해결 전문 · 석사 학위</div>
                 </div>
               </div>
             </div>

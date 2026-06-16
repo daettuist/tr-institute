@@ -1,38 +1,23 @@
 /* ============================================================
-   TR경영연구소 | 공통 컴포넌트 로더
-   헤더·푸터를 각 페이지에 자동으로 삽입합니다.
+   TR경영연구소 | 공통 헤더/푸터 동작 스크립트
 
-   ▶ 사용법
-     각 HTML 페이지에 아래 두 줄을 추가하세요:
-     <div id="header-placeholder"></div>  ← body 최상단
-     <div id="footer-placeholder"></div>  ← body 최하단
+   ※ 헤더·푸터 "내용"은 더 이상 이 파일이 불러오지 않습니다.
+     각 HTML 페이지에 헤더·푸터 마크업을 직접 작성해 두었고
+     (로컬 파일로 열었을 때나 GitHub Pages 양쪽 모두 안정적으로
+     보이도록 하기 위한 방식입니다), 이 스크립트는 아래 3가지
+     "동작"만 담당합니다.
+
+   1. 현재 페이지에 해당하는 네비 링크 활성화
+   2. 모바일 햄버거 메뉴 토글
+   3. 스크롤 시 헤더 그림자 추가
+
+   ▶ 사용법: 각 HTML 페이지 마지막에 아래 한 줄만 추가하면 됩니다.
      <script src="components/components.js"></script>
    ============================================================ */
 
-(async function () {
+(function () {
 
-  /* ── 1. 컴포넌트 파일을 불러와서 삽입하는 함수 ── */
-  async function loadComponent(placeholderId, filePath) {
-    const placeholder = document.getElementById(placeholderId);
-    if (!placeholder) return;
-
-    try {
-      const response = await fetch(filePath);
-      if (!response.ok) throw new Error(`${filePath} 로드 실패`);
-      const html = await response.text();
-      placeholder.outerHTML = html;
-    } catch (err) {
-      console.warn('[components.js]', err.message);
-    }
-  }
-
-  /* ── 2. 헤더·푸터 동시 로드 ── */
-  await Promise.all([
-    loadComponent('header-placeholder', 'components/header.html'),
-    loadComponent('footer-placeholder', 'components/footer.html'),
-  ]);
-
-  /* ── 3. 현재 페이지에 해당하는 네비 링크 활성화 ── */
+  /* ── 1. 현재 페이지에 해당하는 네비 링크 활성화 ── */
   const currentPage = location.pathname.split('/').pop().replace('.html', '') || 'index';
   document.querySelectorAll('.nav-link[data-page]').forEach(link => {
     if (link.dataset.page === currentPage) {
@@ -41,7 +26,7 @@
     }
   });
 
-  /* ── 4. 모바일 햄버거 메뉴 토글 ── */
+  /* ── 2. 모바일 햄버거 메뉴 토글 ── */
   const toggle = document.getElementById('menu-toggle');
   const nav    = document.getElementById('header-nav');
   if (toggle && nav) {
@@ -60,7 +45,7 @@
     });
   }
 
-  /* ── 5. 스크롤 시 헤더 그림자 추가 ── */
+  /* ── 3. 스크롤 시 헤더 그림자 추가 ── */
   const header = document.getElementById('site-header');
   if (header) {
     const onScroll = () => {
